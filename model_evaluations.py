@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
 from sklearn.model_selection import KFold, cross_val_score
-# from sklearn.ensemble import RandomForestRegressor
+from sklearn.ensemble import RandomForestRegressor
 # from sklearn.preprocessing import Normalizer
 # from sklearn.pipeline import make_pipeline
 from sklearn.linear_model import Lasso, LinearRegression, Ridge
@@ -19,8 +19,8 @@ X.drop(drop_cols, axis=1, inplace=True)
 scorer = make_scorer(mean_absolute_error)
 
 models = [
-    # ('RandomForrest', RandomForestRegressor(n_jobs=-1, n_estimators=100, criterion='mae')),
-    ('LinearRegression', LinearRegression(normalize=True)),
+    ('RandomForrest', RandomForestRegressor(n_jobs=-1, n_estimators=100, criterion='mae')),
+    # ('LinearRegression', LinearRegression()),
     ('LassoRegression', Lasso(normalize=True,max_iter=100000)),
     ('RidgeRegression', Ridge(normalize=True,max_iter=100000))
 ]
