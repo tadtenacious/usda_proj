@@ -11,7 +11,7 @@ from datetime import timedelta
 X = pd.read_csv('USDA-0.2.csv')
 y = X['pct_obese_adults13']
 
-drop_cols = ['fips','pct_diabetes_adults13','pct_diabetes_adults08']
+drop_cols = ['fips','pct_diabetes_adults13','pct_diabetes_adults08','pct_obese_adults13']
 X.drop(drop_cols, axis=1, inplace=True)
 
 scorer = make_scorer(mean_absolute_error)
