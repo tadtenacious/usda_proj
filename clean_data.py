@@ -73,4 +73,4 @@ df_num.columns = df_num.columns.map(standardize_name)
 
 df_num = df_num.drop('pct_obese_adults08', axis=1)
 
-df_num.to_csv('USDA-0.2.csv')
+df_num.to_csv('USDA-0.2.csv', index=False)
