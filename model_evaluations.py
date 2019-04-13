@@ -31,6 +31,6 @@ for name, model in models:
     cv_end = time()
     cv_diff = timedelta(seconds=cv_end-cv_start)
     print('-'*30)
-    print('{} Average MAE: {:.2f}'.format(name, np.mean(scores)))
+    print('{} Average MAE: {:.6f}'.format(name, np.mean(scores)))
     print('Completed in {}'.format(cv_diff))
     print('-'*30)
