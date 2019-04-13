@@ -22,5 +22,5 @@ models = [
 cv = KFold(n_splits=5, shuffle=True, random_state=101)
 
 for name, model in models:
-    scores = cross_val_score(model, X, y, scoring=scorer,n_jobs=-1)
+    scores = cross_val_score(model, X, y, cv=cv, scoring=scorer,n_jobs=-1)
     print('{} Average MAE: {:.2f}'.format(name, np.mean(scores)))
