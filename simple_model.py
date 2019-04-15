@@ -4,7 +4,6 @@ from sklearn.model_selection import KFold, cross_val_predict
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.linear_model import LinearRegression, Lasso, Ridge
 from sklearn.metrics import mean_absolute_error
-
 from time import time
 from datetime import timedelta
 
