@@ -1,0 +1,17 @@
+------------------------------
+Starting RandomForest
+Completed in 0:00:04.596471
+RandomForest MAE: 2.3009
+------------------------------
+Starting LinearRegression
+Completed in 0:00:00.084654
+LinearRegression MAE: 2.6006
+------------------------------
+Starting LassoRegression
+Completed in 0:00:00.052656
+LassoRegression MAE: 2.6126
+------------------------------
+Starting RidgeRegression
+Completed in 0:00:00.052520
+RidgeRegression MAE: 2.6006
+------------------------------
