@@ -11,7 +11,7 @@ from datetime import timedelta
 X = pd.read_csv('USDA-0.2.csv')
 y = X['pct_obese_adults13']
 
-X = X[['fips','pct_obese_adults13']]
+X = X[['fips', 'pct_diabetes_adults13']]
 
 cv = KFold(n_splits=5, shuffle=True, random_state=101)
 
@@ -24,4 +24,5 @@ diff = end - start
 td = timedelta(seconds=diff)
 print('Completed in {}'.format(td))
 mae = mean_absolute_error(y, oof_preds)
-print('MAE with only two columns that I believe should be taken out: {:.4f}'.format(mae))
+print(
+    'MAE with only two columns that I believe should be taken out: {:.4f}'.format(mae))
