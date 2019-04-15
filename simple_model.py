@@ -36,6 +36,8 @@ models = [
 ]
 
 for model, name in models:
+    print('-'*30)
     print(f'Starting {name}')
     mae = run_model(model, X, y, cv)
     print(f'{name} MAE: {mae:.4f}')
+    print('-'*30)
