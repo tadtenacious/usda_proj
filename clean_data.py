@@ -24,12 +24,12 @@ state_only = 'Supplemental Data - State'
 
 dataframes = (pd.read_excel(xl, i).rename({'FIPS ': 'FIPS'}, axis=1) if i == 'Supplemental Data - County' else
               pd.read_excel(xl, i).drop(['State', 'County'], axis=1) for i in merge_sheets)
-df = reduce(lambda x, y: x.merge(y, on='FIPS', how='left'), dataframes)
+df = reduce(lambda x, y: x.merge(y, on='FIPS', how='left'),
+            dataframes).query('pct_obese_adults13==pct_obese_adults13')
 # strip whitespace from the States column to join
 df['State'] = df['State'].apply(lambda x: x.strip())
 # NaN's are not equal to anything, so make sure there is a value for states because of that one stupid row
-states = pd.read_excel(xl, sheet_name=state_only).query(
-    "pct_obese_adults13==pct_obese_adults13")
+states = pd.read_excel(xl, sheet_name=state_only).query("State==State")
 df = df.merge(states, on='State', how='left')
 
 convert_columns = [
